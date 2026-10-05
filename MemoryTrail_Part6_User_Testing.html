@@ -1,0 +1,188 @@
+<style>
+.tool-md-preview, .export-container {
+  width: min(100%, 900px);
+  max-width: 900px;
+  min-height: 100%;
+  margin-inline: auto;
+  padding: clamp(32px, 5vw, 68px) clamp(22px, 5vw, 58px);
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+.tool-md-preview img, .export-container img,
+.tool-md-preview video, .export-container video,
+.tool-md-preview svg, .export-container svg { max-width: 100%; height: auto; }
+.tool-md-preview pre, .export-container pre {
+  max-width: 100%;
+  margin: 1.4em 0;
+  padding: 1.05em 1.2em;
+  overflow-x: auto;
+  box-sizing: border-box;
+  color: var(--html-code-text) !important;
+  font-size: 0.9em;
+  line-height: 1.62;
+  tab-size: 2;
+}
+.tool-md-preview pre code, .export-container pre code {
+  display: block;
+  min-width: max-content;
+  border: 0;
+  background: transparent !important;
+  color: var(--html-code-text) !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+.tool-md-preview table, .export-container table { max-width: 100%; overflow-x: auto; }
+@media (max-width: 640px) {
+  .tool-md-preview, .export-container { padding: 28px 20px; }
+  .tool-md-preview pre, .export-container pre { margin-inline: -4px; padding: 0.9em 1em; }
+}
+
+body { margin: 0; background: #f6f8fa; color: #1f2328; }
+.tool-md-preview, .export-container {
+  background: #ffffff;
+  color: #1f2328;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  --html-code-text: #24292f;
+  --html-code-keyword: #cf222e;
+  --html-code-title: #8250df;
+  --html-code-string: #0a3069;
+  --html-code-number: #0550ae;
+  --html-code-comment: #6e7781;
+}
+h1, h2, h3, h4 { color: #1f2328; font-weight: 650; line-height: 1.25; }
+h1 { margin-bottom: 0.7em; padding-bottom: 0.32em; border-bottom: 1px solid #d8dee4; font-size: 2em; }
+h2 { margin-top: 1.75em; padding-bottom: 0.3em; border-bottom: 1px solid #d8dee4; font-size: 1.5em; }
+h3 { margin-top: 1.5em; font-size: 1.25em; }
+a { color: #0969da; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+blockquote { margin: 1em 0; padding: 0 1em; border-left: 0.25em solid #d0d7de; color: #59636e; }
+code { border-radius: 6px; background: #eff1f3; color: #1f2328; padding: 0.18em 0.38em; font-size: 0.88em; }
+pre { border: 1px solid #d8dee4; border-radius: 8px; background: #f6f8fa; box-shadow: none; }
+pre code { background: transparent; padding: 0; }
+table { display: table; width: 100%; border-spacing: 0; border-collapse: collapse; }
+th { background: #f6f8fa; font-weight: 650; }
+th, td { border: 1px solid #d0d7de; padding: 0.55em 0.8em; }
+tr:nth-child(2n) { background: #f6f8fa; }
+hr { height: 1px; border: 0; background: #d8dee4; }
+img { border-radius: 6px; }
+
+.tool-md-preview pre .hljs-keyword, .export-container pre .hljs-keyword,
+.tool-md-preview pre .hljs-selector-tag, .export-container pre .hljs-selector-tag,
+.tool-md-preview pre .hljs-literal, .export-container pre .hljs-literal { color: var(--html-code-keyword) !important; }
+.tool-md-preview pre .hljs-title, .export-container pre .hljs-title,
+.tool-md-preview pre .hljs-title.function_, .export-container pre .hljs-title.function_,
+.tool-md-preview pre .hljs-built_in, .export-container pre .hljs-built_in { color: var(--html-code-title) !important; }
+.tool-md-preview pre .hljs-string, .export-container pre .hljs-string,
+.tool-md-preview pre .hljs-attr, .export-container pre .hljs-attr,
+.tool-md-preview pre .hljs-name, .export-container pre .hljs-name { color: var(--html-code-string) !important; }
+.tool-md-preview pre .hljs-number, .export-container pre .hljs-number,
+.tool-md-preview pre .hljs-symbol, .export-container pre .hljs-symbol,
+.tool-md-preview pre .hljs-variable, .export-container pre .hljs-variable { color: var(--html-code-number) !important; }
+.tool-md-preview pre .hljs-comment, .export-container pre .hljs-comment,
+.tool-md-preview pre .hljs-quote, .export-container pre .hljs-quote { color: var(--html-code-comment) !important; font-style: italic; }
+.tool-md-preview pre .hljs-params, .export-container pre .hljs-params,
+.tool-md-preview pre .hljs-punctuation, .export-container pre .hljs-punctuation { color: var(--html-code-text) !important; }
+</style>
+<div class="export-container">
+<h2 id="memorytrail-part-6-user-testing">MemoryTrail — Part 6 User Testing</h2><h2 id="objective">Objective</h2><p>We tested whether MemoryTrail helps users retrieve photos using incomplete memories instead of exact dates, album names, or device information.</p>
+<h2 id="participants">Participants</h2><p>Planned testing with 5 users representing parents/families, students, professionals, travelers, and users with large photo libraries.</p>
+<h2 id="test-scenarios">Test Scenarios</h2><ol>
+<li>Birthday + child + red dress</li>
+<li>Beach trip + uncertain location</li>
+<li>Family event + blue clothing</li>
+<li>Failed search + guided refinement</li>
+<li>Open-ended personal memory</li>
+</ol>
+<h2 id="metrics">Metrics</h2><ul>
+<li>Search success rate</li>
+<li>Time-to-photo</li>
+<li>Number of searches</li>
+<li>Refinement attempts</li>
+<li>Abandonment</li>
+<li>Wrong selections</li>
+<li>User confidence</li>
+<li>Ease of use</li>
+</ul>
+<h2 id="key-findings-proposed-simulated-replace-with-real-observations-">Key Findings (proposed/simulated — replace with real observations)</h2><ol>
+<li>Users naturally describe memories using events, people and visual clues rather than exact metadata.</li>
+<li>Users expect uncertain information such as “maybe Goa” or “around 2018” to remain flexible.</li>
+<li>Users need more context explaining why a result matches their memory.</li>
+<li>Guided refinement is important when the first search fails.</li>
+<li>Showing relevant memory cues alongside results can increase user confidence.</li>
+</ol>
+<h2 id="what-we-learned">What We Learned</h2><p>The MVP direction is promising because it moves photo retrieval from rigid keyword/metadata search toward memory-based retrieval. Real-user testing is required to validate retrieval accuracy, usability and time-to-photo.</p>
+<h2 id="next-improvements">Next Improvements</h2><ul>
+<li>Improve result explanations</li>
+<li>Make uncertain clues softer</li>
+<li>Add guided refinement suggestions</li>
+<li>Cluster similar photos by event/person</li>
+<li>Test with larger real-world photo libraries</li>
+</ul>
+<h2 id="success-criteria">Success Criteria</h2><p>The MVP will be considered successful if users can find the intended photo faster, with fewer failed searches and less abandonment.</p>
+<h2 id="5-user-testing-script">5-User Testing Script</h2><h3 id="introduction">Introduction</h3><p>“We are testing this prototype, not you. There are no right or wrong answers. Please think aloud while you use it. Try to find the photo as you naturally would. If you get stuck, tell us what you expected to happen rather than asking us how to proceed.”</p>
+<h3 id="task-1-birthday-red-dress">Task 1 — Birthday + red dress</h3><p>“Imagine you want to show someone a birthday photo of your child. You remember your child was wearing a red dress, but you don't remember the year, album, or device.”</p>
+<p>Ask: “Using MemoryTrail, find the photo you believe matches this memory.”</p>
+<h3 id="task-2-beach-trip-uncertain-location">Task 2 — Beach trip + uncertain location</h3><p>“You remember a beach trip, but you're not sure whether it was in Goa. You don't remember the year.”</p>
+<p>Ask: “Find the photo from this trip.”</p>
+<h3 id="task-3-family-event-blue-clothing">Task 3 — Family event + blue clothing</h3><p>“Find a family-event photo where someone was wearing blue. You don't remember the date.”</p>
+<h3 id="task-4-failed-search-and-refinement">Task 4 — Failed search and refinement</h3><p>“Find a photo from a family trip where my friend was wearing a yellow shirt.”</p>
+<p>After an imperfect result: “This isn't the photo you were looking for. What would you do next?”</p>
+<h3 id="task-5-open-ended-memory-retrieval">Task 5 — Open-ended memory retrieval</h3><p>“Think of a memorable photo in your library that you would normally have difficulty finding. Try to find it using MemoryTrail.”</p>
+<h2 id="example-proposed-findings-quotes">Example Proposed Findings / Quotes</h2><p>These are examples only and must not be presented as actual participant quotes until live testing is completed.</p>
+<p>Finding 1: Users naturally describe memories.
+Example: “I don't remember the year. I just remember it was my daughter's birthday and she was wearing red.”</p>
+<p>Finding 2: Uncertain information should not become a hard filter.
+Example: “I'm not completely sure it was Goa, so I don't want Goa to remove the photo.”</p>
+<p>Finding 3: Users need an explanation for why a result appeared.
+Example: “This looks like the photo, but why did you show me this one?”</p>
+<p>Finding 4: Guided refinement reduces abandonment.
+Example: “I know this isn't it, but I don't know what else I should search.”</p>
+<h2 id="example-results-table-template-only">Example Results Table — Template Only</h2><table>
+<thead>
+<tr>
+<th>User</th>
+<th align="right">Tasks completed</th>
+<th align="right">Avg. time</th>
+<th align="right">Refinements</th>
+<th>Main issue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>U1</td>
+<td align="right">4/5</td>
+<td align="right">42 sec</td>
+<td align="right">2</td>
+<td>Wanted more result context</td>
+</tr>
+<tr>
+<td>U2</td>
+<td align="right">5/5</td>
+<td align="right">35 sec</td>
+<td align="right">1</td>
+<td>Understood search quickly</td>
+</tr>
+<tr>
+<td>U3</td>
+<td align="right">4/5</td>
+<td align="right">51 sec</td>
+<td align="right">3</td>
+<td>Didn't understand refinement</td>
+</tr>
+<tr>
+<td>U4</td>
+<td align="right">5/5</td>
+<td align="right">39 sec</td>
+<td align="right">2</td>
+<td>Uncertain location worked well</td>
+</tr>
+<tr>
+<td>U5</td>
+<td align="right">3/5</td>
+<td align="right">64 sec</td>
+<td align="right">4</td>
+<td>Too many similar results</td>
+</tr>
+</tbody></table>
+<p>Do not claim these example numbers came from real participants. Replace them after actual testing.</p>
+
+</div>
